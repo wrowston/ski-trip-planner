@@ -10,6 +10,7 @@ const tripSchema = new Schema({
     airport: String,
     daysSkiing: Number,
     passortRequired: Boolean,
+    notes: String,
     // skiResort: 
 })
 
