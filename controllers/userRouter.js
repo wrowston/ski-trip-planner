@@ -15,6 +15,11 @@ userRouter.get('/', async (req, res) => {
     }
 })
 
+// CREATE NEW USER FORM
+userRouter.get('/new', (req, res) => {
+    res.render('user/createUser')
+})
+
 // GET A SINGLE USER
 userRouter.get('/:id', async (req, res) => {
     try {
