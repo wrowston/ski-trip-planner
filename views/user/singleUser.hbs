@@ -1,0 +1,23 @@
+<div class="header">Current User</div>
+
+<a href="/user/{{singleUser._id}}/edit">
+    <button>
+        Edit
+    </button>
+</a>
+
+<div class="user-item">
+    <div class="title">Name</div>
+    <div class="user-data">{{singleUser.name}}</div>
+
+    <div class="title">Skill Level</div>
+    <div class="user-data">{{singleUser.skillLevel}}</div>
+
+    <div class="title">Sport</div>
+    <div class="user-data">{{singleUser.skiOrSnowboard}}</div>
+
+</div>
+
+<form action="/user/{{singleUser._id}}?_method=DELETE" method="POST">
+    <button>Delete</button>
+</form>

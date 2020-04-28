@@ -23,9 +23,9 @@ userRouter.get('/new', (req, res) => {
 // GET A SINGLE USER
 userRouter.get('/:id', async (req, res) => {
     try {
-        const singleUser = await UserModel.getOneUser()
+        const singleUser = await UserModel.getOneUser(req.params.id)
         console.log('got a single user successfully')
-        res.json(singleUser)
+        res.render('user/singleUser', { singleUser })
     } catch (err) {
         console.log(err)
         res.json(err)
