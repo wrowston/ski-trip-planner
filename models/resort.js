@@ -42,5 +42,6 @@ module.exports = {
     getOneResort,
     createResort,
     deleteResort,
-    updateResort
+    updateResort,
+    // resortSchema
 }

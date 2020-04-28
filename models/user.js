@@ -1,12 +1,12 @@
 const mongoose = require('../db/connection.js')
 const Schema = mongoose.Schema
-// require ski trip schema
+// const TripModel = require('./trip.js')
 
 const userSchema = new Schema({
     name: String,
     skillLevel: String,
     skierOrSnowboarder: String,
-    // skiTrip: 
+    // skiTrip: TripModel.tripSchema
 })
 
 const userCollection = mongoose.model('User', userSchema)

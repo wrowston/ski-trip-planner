@@ -1,0 +1,16 @@
+<h1>All Users</h1>
+
+{{#each allUsers}}
+<a class="user-item" href="/user/{{_id}}">
+    <div class="title">Name</div>
+    <div class="data">{{name}}</div>
+
+    <div class="title">Skill Level</div>
+    <div class="data">{{skillLevel}}</div>
+
+    <div class="title">Ski or Snowboard</div>
+    <div class="data">{{skierOrSnowboarder}}</div>
+
+    {{!-- <div class="title">Ski Trips</div>
+    <div class="data">{{}}</div> --}}
+</a>
