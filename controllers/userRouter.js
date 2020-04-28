@@ -20,6 +20,18 @@ userRouter.get('/new', (req, res) => {
     res.render('user/createUser')
 })
 
+// EDIT USER FORM
+userRouter.get('/:id/edit', async (req, res) => {
+    try {
+        const singleUser = await UserModel.getOneUser(req.params.id)
+        res.render('user/editUser', { singleUser })
+    } catch (err) {
+        console.log(err)
+        res.json(err)
+    }
+})
+
+
 // GET A SINGLE USER
 userRouter.get('/:id', async (req, res) => {
     try {
