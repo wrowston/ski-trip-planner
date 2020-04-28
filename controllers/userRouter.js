@@ -8,7 +8,7 @@ userRouter.get('/', async (req, res) => {
     try {
         const allUsers = await UserModel.getAllUsers()
         console.log('got all users successfully')
-        res.json(allUsers)
+        res.render('user/allUsers', { allUsers })
     } catch (err) {
         console.log(err)
         res.json(err)

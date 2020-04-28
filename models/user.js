@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 const userSchema = new Schema({
     name: String,
     skillLevel: String,
-    skierOrSnowboarder: String,
+    skiOrSnowboard: String,
     // skiTrip: TripModel.tripSchema
 })
 
