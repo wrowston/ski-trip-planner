@@ -1,6 +1,6 @@
 const mongoose = require('../db/connection.js')
 const Schema = mongoose.Schema
-// const ResortModel = require('./resort.js')
+const ResortModel = require('./resort.js')
 
 const tripSchema = new Schema({
     name: String,
@@ -11,10 +11,10 @@ const tripSchema = new Schema({
     daysSkiing: Number,
     passortRequired: Boolean,
     notes: String,
-    // skiResort: ResortModel.resortSchema
+    skiResort: new ResortModel()
 })
 
-const tripCollection = mongoose.model('Trip', tripSchema)
+const tripCollection = mongoose.model('trip', tripSchema)
 
 function getAllTrips() {
     return tripCollection.find()

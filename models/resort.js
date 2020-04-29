@@ -10,12 +10,12 @@ const resortSchema = new Schema({
     amountOfTrails: Number,
     amountofLifts: Number,
     hasOnMountainLodging: Boolean,
-    OnIkonPass: Boolean,
-    OnEpicPass: Boolean,
+    onIkonPass: Boolean,
+    onEpicPass: Boolean,
     notes: String,
 })
 
-const resortCollection = mongoose.model('Resort', resortSchema)
+const resortCollection = mongoose.model('resort', resortSchema)
 
 function getAllResorts() {
     return resortCollection.find()

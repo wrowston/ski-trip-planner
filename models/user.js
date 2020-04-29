@@ -9,7 +9,7 @@ const userSchema = new Schema({
     // skiTrip: TripModel.tripSchema
 })
 
-const userCollection = mongoose.model('User', userSchema)
+const userCollection = mongoose.model('user', userSchema)
 
 function getAllUsers() {
     return userCollection.find()
