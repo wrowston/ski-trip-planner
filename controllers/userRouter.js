@@ -48,7 +48,7 @@ userRouter.get('/:id', async (req, res) => {
 userRouter.post('/', async (req, res) => {
     try {
         await UserModel.createUser(req.body)
-        res.json('created user')
+        res.redirect('/user')
     } catch (err) {
         console.log(err)
         res.json(err)
@@ -59,7 +59,7 @@ userRouter.post('/', async (req, res) => {
 userRouter.delete('/:id', async (req, res) => {
     try {
         await UserModel.deleteUser(req.params.id)
-        res.json('user deleted')
+        res.redirect('/user')
     } catch (err) {
         console.log(err)
         res.json(err)
@@ -70,7 +70,7 @@ userRouter.delete('/:id', async (req, res) => {
 userRouter.put('/:id', async (req, res) => {
     try {
         await UserModel.updateUser(req.params.id, req.body)
-        res.json('updated user')
+        res.redirect(`/user/${req.params.id}`)
     } catch (err) {
         console.log(err)
         res.json(err)
