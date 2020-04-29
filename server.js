@@ -1,6 +1,7 @@
 const express = require('express')
 const userRouter = require('./controllers/userRouter.js')
 const tripRouter = require('./controllers/tripRouter.js')
+const resortRouter = require('./controllers/resortRouter.js')
 
 const methodOverride = require('method-override')
 
@@ -14,6 +15,7 @@ app.use(methodOverride('_method'))
 
 app.use('/user', userRouter)
 app.use('/trip', tripRouter)
+app.use('/resort', resortRouter)
 
 const PORT = process.env.PORT || 3000
 

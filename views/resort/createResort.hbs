@@ -1,31 +1,43 @@
-<div class="header">Create Trip</div>
+<div class="header">Create Resort</div>
 
 
-<form method="POST" action="/trip">
+<form method="POST" action="/resort">
 
     <label>Name</label>
-    <input type="text" placeholder="Trip Name" name="name" />
+    <input type="text" placeholder="Resort Name" name="name" />
 
-    <label>Country</label>
-    <select name="country">
-        <option value="Canada">Canada</option>
-        <option value="United States of America">United States of America</option>
+    <label>Average Annual Snowfall (in.)</label>
+    <input type="number" name="averageAnnualSnowfall" />
+
+    <label>YTD Snowfall (in.)</label>
+    <input type="number" name="yearToDateSnowfall" />
+
+    <label>Current Base (in.)</label>
+    <input type="number" name="currentBase" />
+
+    <label>Vertical Feet (ft.)</label>
+    <input type="number" name="verticalFeet" />
+
+    <label>Number of Trails</label>
+    <input type="number" name="amountOfTrails" />
+
+    <label>Number of Lifts</label>
+    <input type="number" name="amountofLifts" />
+
+    <label>Does this resort on mountain lodging?</label>
+    <select name="hasOnMountainLodging">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
     </select>
 
-    <label>State</label>
-    <input type="text" name="state" />
+    <label>Is this resort on the Ikon Pass?</label>
+    <select name="onIkonPass">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+    </select>
 
-    <label>City</label>
-    <input type="text" name="city" />
-
-    <label>Airport</label>
-    <input type="text" name="airport" />
-
-    <label>Days Skiing</label>
-    <input type="number" name="daysSkiing" />
-
-    <label>Passport Required?</label>
-    <select name="passportRequired">
+    <label>Is this resort on the Epic Pass?</label>
+    <select name="onEpicPass">
         <option value="true">Yes</option>
         <option value="false">No</option>
     </select>
