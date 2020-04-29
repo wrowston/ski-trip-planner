@@ -1,5 +1,6 @@
 const express = require('express')
 const UserModel = require('../models/user.js')
+const tripModel = require('../models/trip.js')
 
 const userRouter = express.Router()
 
@@ -36,8 +37,9 @@ userRouter.get('/:id/edit', async (req, res) => {
 userRouter.get('/:id', async (req, res) => {
     try {
         const singleUser = await UserModel.getOneUser(req.params.id)
+        const trip = await tripModel.getAllTripsByUserId(req.params.id)
         console.log('got a single user successfully')
-        res.render('user/singleUser', { singleUser })
+        res.render('user/singleUser', { singleUser, trip })
     } catch (err) {
         console.log(err)
         res.json(err)

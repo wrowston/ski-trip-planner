@@ -1,5 +1,6 @@
 const express = require('express')
 const TripModel = require('../models/trip.js')
+const UserModel = require('../models/user.js')
 
 const tripRouter = express.Router()
 
@@ -15,9 +16,22 @@ tripRouter.get('/', async (req, res) => {
     }
 })
 
+// GET ALL TRIPS BY ONE USER
+tripRouter.get('/user/:id', async (req, res) => {
+    try {
+        const allTrips = await TripModel.getAllTripsByUserId(req.params.id)
+        console.log('got all trips successfully')
+        res.render('trip/allTrips', { allTrips })
+    } catch (err) {
+        console.log(err)
+        res.json(err)
+    }
+})
+
 // CREATE NEW TRIP FORM
-tripRouter.get('/new', (req, res) => {
-    res.render('trip/createTrip')
+tripRouter.get('/new/user/:id', async (req, res) => {
+    const singleUser = await UserModel.getOneUser(req.params.id)
+    res.render('trip/createTrip', { singleUser })
 })
 
 // EDIT TRIP FORM

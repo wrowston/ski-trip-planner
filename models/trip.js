@@ -10,6 +10,10 @@ const tripSchema = new Schema({
     daysSkiing: Number,
     passortRequired: Boolean,
     notes: String,
+    userId: {
+        type: String,
+        required: true
+    }
 })
 
 const tripCollection = mongoose.model('trip', tripSchema)
@@ -20,6 +24,10 @@ function getAllTrips() {
 
 function getOneTrip(id) {
     return tripCollection.findById(id)
+}
+
+function getAllTripsByUserId(userId) {
+    return tripCollection.find({ userId })
 }
 
 function createTrip(newTrip) {
@@ -40,5 +48,5 @@ module.exports = {
     createTrip,
     deleteTrip,
     updateTrip,
-    // tripSchema
+    getAllTripsByUserId
 }

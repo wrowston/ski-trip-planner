@@ -16,6 +16,20 @@
     <div class="title">Sport</div>
     <div class="user-data">{{singleUser.skiOrSnowboard}}</div>
 
+    <a href="/trip/user/{{singleUser._id}}" class="user-data">
+        <div class="title">Ski Trips</div>
+    </a>
+    {{#each trip}}
+    {{!-- not showing trip name  --}}
+    <a href="/trip/{{trip._id}}" class="user-data">
+        {{trip.name}}
+    </a>
+    {{/each}}
+
+    <a href="/trip/new/user/{{singleUser._id}}">
+        <button>Create a New Trip</button>
+    </a>
+
 </div>
 
 <form action="/user/{{singleUser._id}}?_method=DELETE" method="POST">
