@@ -1,0 +1,46 @@
+<div class="header">All Resorts</div>
+
+<a href="/resort/new">
+    <button>
+        Create Resort
+    </button>
+</a>
+
+
+{{#each allResorts}}
+<a class="resort-item" href="/resort/{{_id}}">
+    <div class="title">Name</div>
+    <div class="resort-data">{{name}}</div>
+
+    <div class="title">Average Annual Snowfall</div>
+    <div class="resort-data">{{averageAnnualSnowfall}}</div>
+
+    <div class="title">YTD Snowfall</div>
+    <div class="resort-data">{{yearToDateSnowfall}}</div>
+
+    <div class="title">Current Base</div>
+    <div class="resort-data">{{currentBase}}</div>
+
+    <div class="title">Vertical Feet</div>
+    <div class="resort-data">{{verticalFeet}}</div>
+
+    <div class="title">Number of Trails</div>
+    <div class="resort-data">{{amountOfTrails}}</div>
+
+    <div class="title">Number of Lifts</div>
+    <div class="resort-data">{{amountofLifts}}</div>
+
+    <div class="title">On Mountain Lodging?</div>
+    <div class="resort-data">{{hasOnMountainLodging}}</div>
+
+    <div class="title">Is this resort on the Ikon Pass?</div>
+    <div class="resort-data">{{onIkonPass}}</div>
+
+    <div class="title">Is this resort on the Epic Pass?</div>
+    <div class="resort-data">{{onEpicPass}}</div>
+
+    <div class="title">Notes</div>
+    <div class="resort-data">{{notes}}</div>
+</a>
+<hr>
+{{/each}}

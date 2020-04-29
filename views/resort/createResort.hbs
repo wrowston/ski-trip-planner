@@ -1,0 +1,34 @@
+<div class="header">Create Trip</div>
+
+
+<form method="POST" action="/trip">
+
+    <label>Name</label>
+    <input type="text" placeholder="Trip Name" name="name" />
+
+    <label>Country</label>
+    <select name="country">
+        <option value="Canada">Canada</option>
+        <option value="United States of America">United States of America</option>
+    </select>
+
+    <label>State</label>
+    <input type="text" name="state" />
+
+    <label>City</label>
+    <input type="text" name="city" />
+
+    <label>Airport</label>
+    <input type="text" name="airport" />
+
+    <label>Days Skiing</label>
+    <input type="number" name="daysSkiing" />
+
+    <label>Passport Required?</label>
+    <select name="passportRequired">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+    </select>
+
+    <input type="submit" value="Create" />
+</form>
