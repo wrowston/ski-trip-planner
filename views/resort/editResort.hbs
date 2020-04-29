@@ -1,38 +1,50 @@
-<div class="header">Edit Trip</div>
+<div class="header">Edit Resort</div>
 
-<form action="/trip/{{singleTrip._id}}?_method=PUT" method="POST">
+<form action="/resort/{{singleResort._id}}?_method=PUT" method="POST">
 
 
     <label>Name</label>
-    <input type="text" name="name" value="{{singleTrip.name}}" />
+    <input type="text" name="name" value="{{singleResort.name}}" />
 
-    <label>Country</label>
-    <select name="country" value="{{singleTrip.country}}">
-        <option value="Canada">Canada</option>
-        <option value="United States of America">United States of America</option>
+    <label>Average Annual Snowfall (in.)</label>
+    <input type="number" name="averageAnnualSnowfall" value="{{singleResort.averageAnnualSnowfall}}" />
+
+    <label>YTD Snowfall (in.)</label>
+    <input type="number" name="yearToDateSnowfall" value="{{singleResort.yearToDateSnowfall}}" />
+
+    <label>Current Base (in.)</label>
+    <input type="number" name="currentBase" value="{{singleResort.currentBase}}" />
+
+    <label>Vertical Feet (ft.)</label>
+    <input type="number" name="verticalFeet" value="{{singleResort.verticalFeet}}" />
+
+    <label>Number of Trails</label>
+    <input type="number" name="amountOfTrails" value="{{singleResort.amountOfTrails}}" />
+
+    <label>Number of Lifts</label>
+    <input type="number" name="amountofLifts" value="{{singleResort.amountofLifts}}" />
+
+    <label>Does this resort on mountain lodging?</label>
+    <select name="hasOnMountainLodging" value="{{singleResort.hasOnMountainLodging}}">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
     </select>
 
-    <label>State</label>
-    <input type="text" name="state" value="{{singleTrip.state}}" />
+    <label>Is this resort on the Ikon Pass?</label>
+    <select name="onIkonPass" value="{{singleResort.onIkonPass}}">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+    </select>
 
-    <label>City</label>
-    <input type="text" name="city" value="{{singleTrip.city}}" />
-
-    <label>Airport</label>
-    <input type="text" name="airport" value="{{singleTrip.airport}}" />
-
-    <label>Days Skiing</label>
-    <input type="number" name="daysSkiing" value="{{singleTrip.daysSkiing}}" />
-
-    <label>Passport Required?</label>
-    <select name="passportRequired" value="{{singleTrip.passportRequired}}">
+    <label>Is this resort on the Epic Pass?</label>
+    <select name="onEpicPass" value="{{singleResort.onEpicPass}}">
         <option value="true">Yes</option>
         <option value="false">No</option>
     </select>
 
 
     <label>Notes</label>
-    <input type="text" name="notes" value="{{singleTrip.notes}}">
+    <input type="text" name="notes" value="{{singleResort.notes}}">
 
     <input type="submit" value="Save" />
 </form>
