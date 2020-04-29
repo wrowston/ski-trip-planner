@@ -19,10 +19,10 @@
     <a href="/trip/user/{{singleUser._id}}" class="user-data">
         <div class="title">Ski Trips</div>
     </a>
+
     {{#each trip}}
-    {{!-- not showing trip name  --}}
-    <a href="/trip/{{trip._id}}" class="user-data">
-        {{trip.name}}
+    <a href="/trip/{{_id}}">
+        <div class="user-data">{{name}}</div>
     </a>
     {{/each}}
 

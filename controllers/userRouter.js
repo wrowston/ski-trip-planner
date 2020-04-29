@@ -35,6 +35,7 @@ userRouter.get('/:id/edit', async (req, res) => {
 
 // GET A SINGLE USER
 userRouter.get('/:id', async (req, res) => {
+    console.log('userRouter.GET one route')
     try {
         const singleUser = await UserModel.getOneUser(req.params.id)
         const trip = await tripModel.getAllTripsByUserId(req.params.id)
