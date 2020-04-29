@@ -1,0 +1,37 @@
+<div class="header">All Trips</div>
+
+<a href="/trip/new">
+    <button>
+        Create Trip
+    </button>
+</a>
+
+
+{{#each allTrips}}
+<a class="trip-item" href="/trip/{{_id}}">
+    <div class="title">Name</div>
+    <div class="trip-data">{{name}}</div>
+
+    <div class="title">Country</div>
+    <div class="trip-data">{{country}}</div>
+
+    <div class="title">State</div>
+    <div class="trip-data">{{state}}</div>
+
+    <div class="title">City</div>
+    <div class="trip-data">{{city}}</div>
+
+    <div class="title">Airport</div>
+    <div class="trip-data">{{airport}}</div>
+
+    <div class="title">Days Skiing</div>
+    <div class="trip-data">{{daysSkiing}}</div>
+
+    <div class="title">Passport Required</div>
+    <div class="trip-data">{{passportRequired}}</div>
+
+    <div class="title">Notes</div>
+    <div class="trip-data">{{notes}}</div>
+</a>
+<hr>
+{{/each}}

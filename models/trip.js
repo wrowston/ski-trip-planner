@@ -1,6 +1,5 @@
 const mongoose = require('../db/connection.js')
 const Schema = mongoose.Schema
-const ResortModel = require('./resort.js')
 
 const tripSchema = new Schema({
     name: String,
@@ -11,7 +10,6 @@ const tripSchema = new Schema({
     daysSkiing: Number,
     passortRequired: Boolean,
     notes: String,
-    skiResort: new ResortModel()
 })
 
 const tripCollection = mongoose.model('trip', tripSchema)
