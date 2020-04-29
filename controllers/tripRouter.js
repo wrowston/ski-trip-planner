@@ -48,7 +48,7 @@ tripRouter.get('/:id', async (req, res) => {
 tripRouter.post('/', async (req, res) => {
     try {
         await TripModel.createTrip(req.body)
-        res.json('created trip')
+        res.redirect('/trip')
     } catch (err) {
         console.log(err)
         res.json(err)
@@ -59,7 +59,7 @@ tripRouter.post('/', async (req, res) => {
 tripRouter.delete('/:id', async (req, res) => {
     try {
         await TripModel.deleteTrip(req.params.id)
-        res.json('trip deleted')
+        res.redirect('/trip')
     } catch (err) {
         console.log(err)
         res.json(err)
@@ -70,7 +70,7 @@ tripRouter.delete('/:id', async (req, res) => {
 tripRouter.put('/:id', async (req, res) => {
     try {
         await TripModel.updateTrip(req.params.id, req.body)
-        res.json('updated trip')
+        res.redirect(`/trip/${req.params.id}`)
     } catch (err) {
         console.log(err)
         res.json(err)

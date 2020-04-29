@@ -1,23 +1,38 @@
-<div class="header">Current User</div>
+<div class="header">Current Trip</div>
 
-<a href="/user/{{singleUser._id}}/edit">
+<a href="/trip/{{singleTrip._id}}/edit">
     <button>
         Edit
     </button>
 </a>
 
-<div class="user-item">
+<div class="trip-item">
     <div class="title">Name</div>
-    <div class="user-data">{{singleUser.name}}</div>
+    <div class="trip-data">{{singleTrip.name}}</div>
 
-    <div class="title">Skill Level</div>
-    <div class="user-data">{{singleUser.skillLevel}}</div>
+    <div class="title">Country</div>
+    <div class="trip-data">{{singleTrip.country}}</div>
 
-    <div class="title">Sport</div>
-    <div class="user-data">{{singleUser.skiOrSnowboard}}</div>
+    <div class="title">State</div>
+    <div class="trip-data">{{singleTrip.state}}</div>
+
+    <div class="title">City</div>
+    <div class="trip-data">{{singleTrip.city}}</div>
+
+    <div class="title">Airport</div>
+    <div class="trip-data">{{singleTrip.airport}}</div>
+
+    <div class="title">Days Skiing</div>
+    <div class="trip-data">{{singleTrip.daysSkiing}}</div>
+
+    <div class="title">Passport Required</div>
+    <div class="trip-data">{{singleTrip.passportRequired}}</div>
+
+    <div class="title">Notes</div>
+    <div class="trip-data">{{singleTrip.notes}}</div>
 
 </div>
 
-<form action="/user/{{singleUser._id}}?_method=DELETE" method="POST">
+<form action="/trip/{{singleTrip._id}}?_method=DELETE" method="POST">
     <button>Delete</button>
 </form>
