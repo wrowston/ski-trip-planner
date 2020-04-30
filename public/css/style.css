@@ -41,12 +41,15 @@ a {
 
 .card {
     margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .user-cards {
     display: flex;
     justify-content: center;
     align-items: center;
+    -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
     margin: 20px;
     padding: 20px;
