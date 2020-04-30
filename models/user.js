@@ -2,9 +2,18 @@ const mongoose = require('../db/connection.js')
 const Schema = mongoose.Schema
 
 const userSchema = new Schema({
-    name: String,
-    skillLevel: String,
-    skiOrSnowboard: String,
+    name: {
+        type: String,
+        required: true
+    },
+    skillLevel: {
+        type: String,
+        required: true
+    },
+    skiOrSnowboard: {
+        type: String,
+        required: true
+    }
 })
 
 const userCollection = mongoose.model('user', userSchema)
