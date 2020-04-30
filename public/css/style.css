@@ -7,3 +7,30 @@ a {
     text-decoration: none;
 }
 
+.welcome {
+    text-align: center;
+    font-size: 45px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.description{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.create-user{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 30%;
+    padding: 10px;
+}
+
+.form-control {
+    margin: 0 0 20px 0;
+}
