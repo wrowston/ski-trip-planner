@@ -13,6 +13,10 @@ const resortSchema = new Schema({
     onIkonPass: Boolean,
     onEpicPass: Boolean,
     notes: String,
+    tripId: {
+        type: String,
+        required: true
+    }
 })
 
 const resortCollection = mongoose.model('resort', resortSchema)
@@ -23,6 +27,10 @@ function getAllResorts() {
 
 function getOneResort(id) {
     return resortCollection.findById(id)
+}
+
+function getAllResortsByTripId(tripId) {
+    return resortCollection.find({ tripId })
 }
 
 function createResort(newResort) {
@@ -43,5 +51,4 @@ module.exports = {
     createResort,
     deleteResort,
     updateResort,
-    // resortSchema
 }
