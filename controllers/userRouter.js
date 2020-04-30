@@ -22,9 +22,9 @@ userRouter.get('/new', (req, res) => {
 })
 
 // EDIT USER FORM
-userRouter.get('/:id/edit', async (req, res) => {
+userRouter.get('/:userId/edit', async (req, res) => {
     try {
-        const singleUser = await userModel.getOneUser(req.params.id)
+        const singleUser = await userModel.getOneUser(req.params.userId)
         res.render('user/editUser', { singleUser })
     } catch (err) {
         console.log(err)
@@ -34,11 +34,11 @@ userRouter.get('/:id/edit', async (req, res) => {
 
 
 // GET A SINGLE USER
-userRouter.get('/:id', async (req, res) => {
+userRouter.get('/:userId', async (req, res) => {
     console.log('userRouter.GET one route')
     try {
-        const singleUser = await userModel.getOneUser(req.params.id)
-        const trip = await tripModel.getAllTripsByUserId(req.params.id)
+        const singleUser = await userModel.getOneUser(req.params.userId)
+        const trip = await tripModel.getAllTripsByUserId(req.params.userId)
         console.log('got a single user successfully')
         res.render('user/singleUser', { singleUser, trip })
     } catch (err) {
@@ -59,9 +59,9 @@ userRouter.post('/', async (req, res) => {
 })
 
 // DELETE A USER
-userRouter.delete('/:id', async (req, res) => {
+userRouter.delete('/:userId', async (req, res) => {
     try {
-        await userModel.deleteUser(req.params.id)
+        await userModel.deleteUser(req.params.userId)
         res.redirect('/user')
     } catch (err) {
         console.log(err)
@@ -70,10 +70,10 @@ userRouter.delete('/:id', async (req, res) => {
 })
 
 // UPDATE A USER
-userRouter.put('/:id', async (req, res) => {
+userRouter.put('/:userId', async (req, res) => {
     try {
-        await userModel.updateUser(req.params.id, req.body)
-        res.redirect(`/user/${req.params.id}`)
+        await userModel.updateUser(req.params.userId, req.body)
+        res.redirect(`/user/${req.params.userId}`)
     } catch (err) {
         console.log(err)
         res.json(err)
