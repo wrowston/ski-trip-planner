@@ -31,6 +31,13 @@
     <div class="title">Notes</div>
     <div class="trip-data">{{singleTrip.notes}}</div>
 
+    <div class="title">Ski Resort(s)</div>
+    {{#each resort}}
+    <a href="/resort/{{_id}}">
+        <div class="trip-data">{{name}}</div>
+    </a>
+    {{/each}}
+
 </div>
 
 <form action="/trip/{{singleTrip._id}}?_method=DELETE" method="POST">
