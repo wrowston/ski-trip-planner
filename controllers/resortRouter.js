@@ -49,8 +49,8 @@ resortRouter.get('/:resortId', async (req, res) => {
 // CREATE A NEW RESORT
 resortRouter.post('/', async (req, res) => {
     try {
-        await resortModel.createResort(req.body)
-        res.redirect('/resort')
+        const resort = await resortModel.createResort(req.body)
+        res.redirect(`/trip/${resort.tripId}`)
     } catch (err) {
         console.log(err)
         res.json(err)
