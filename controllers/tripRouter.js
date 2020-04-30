@@ -30,7 +30,7 @@ tripRouter.get('/user/:userId', async (req, res) => {
 })
 
 // CREATE NEW TRIP FORM
-tripRouter.get('/new/user/:userId', async (req, res) => {
+tripRouter.get('/newTrip/user/:userId', async (req, res) => {
     const singleUser = await userModel.getOneUser(req.params.userId)
     res.render('trip/createTrip', { singleUser })
 })

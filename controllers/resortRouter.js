@@ -1,12 +1,13 @@
 const express = require('express')
-const ResortModel = require('../models/resort.js')
+const resortModel = require('../models/resort.js')
+const tripModel = require('../models/trip.js')
 
 const resortRouter = express.Router()
 
 // GET ALL RESORTS
 resortRouter.get('/', async (req, res) => {
     try {
-        const allResorts = await ResortModel.getAllResorts()
+        const allResorts = await resortModel.getAllResorts()
         console.log('got all resorts successfully')
         res.render('resort/allResorts', { allResorts })
     } catch (err) {
@@ -16,14 +17,15 @@ resortRouter.get('/', async (req, res) => {
 })
 
 // CREATE NEW RESORT FORM
-resortRouter.get('/new', (req, res) => {
-    res.render('resort/createResort')
+resortRouter.get('/newResort/trip/:tripId', async (req, res) => {
+    const singleTrip = await tripModel.getOneTrip(req.params.tripId)
+    res.render('resort/createResort', { singleTrip })
 })
 
 // EDIT RESORT FORM
-resortRouter.get('/:id/edit', async (req, res) => {
+resortRouter.get('/:resortId/edit', async (req, res) => {
     try {
-        const singleResort = await ResortModel.getOneResort(req.params.id)
+        const singleResort = await resortModel.getOneResort(req.params.resortId)
         res.render('resort/editResort', { singleResort })
     } catch (err) {
         console.log(err)
@@ -33,9 +35,9 @@ resortRouter.get('/:id/edit', async (req, res) => {
 
 
 // GET A SINGLE RESORT
-resortRouter.get('/:id', async (req, res) => {
+resortRouter.get('/:resortId', async (req, res) => {
     try {
-        const singleResort = await ResortModel.getOneResort(req.params.id)
+        const singleResort = await resortModel.getOneResort(req.params.resortId)
         console.log('got a single resort successfully')
         res.render('resort/singleResort', { singleResort })
     } catch (err) {
@@ -47,7 +49,7 @@ resortRouter.get('/:id', async (req, res) => {
 // CREATE A NEW RESORT
 resortRouter.post('/', async (req, res) => {
     try {
-        await ResortModel.createResort(req.body)
+        await resortModel.createResort(req.body)
         res.redirect('/resort')
     } catch (err) {
         console.log(err)
@@ -56,9 +58,9 @@ resortRouter.post('/', async (req, res) => {
 })
 
 // DELETE A RESORT
-resortRouter.delete('/:id', async (req, res) => {
+resortRouter.delete('/:resortId', async (req, res) => {
     try {
-        await ResortModel.deleteResort(req.params.id)
+        await resortModel.deleteResort(req.params.resortId)
         res.redirect('/resort')
     } catch (err) {
         console.log(err)
@@ -67,10 +69,10 @@ resortRouter.delete('/:id', async (req, res) => {
 })
 
 // UPDATE A RESORT
-resortRouter.put('/:id', async (req, res) => {
+resortRouter.put('/:resortId', async (req, res) => {
     try {
-        await ResortModel.updateResort(req.params.id, req.body)
-        res.redirect(`/resort/${req.params.id}`)
+        await resortModel.updateResort(req.params.resortId, req.body)
+        res.redirect(`/resort/${req.params.resortId}`)
     } catch (err) {
         console.log(err)
         res.json(err)
