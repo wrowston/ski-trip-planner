@@ -16,6 +16,19 @@ resortRouter.get('/', async (req, res) => {
     }
 })
 
+resortRouter.get('/trip/:tripId', async (req, res) => {
+    try {
+        const allResorts = await resortModel.getAllResortsByTripId(req.params.tripId)
+        const trip = await tripModel.getOneTrip(req.params.tripId)
+        console.log('got all resorts successfully')
+        res.render('resort/allResorts', { allResorts, trip })
+    } catch (err) {
+        console.log(err)
+        res.json(err)
+    }
+})
+
+
 // CREATE NEW RESORT FORM
 resortRouter.get('/newResort/trip/:tripId', async (req, res) => {
     const singleTrip = await tripModel.getOneTrip(req.params.tripId)

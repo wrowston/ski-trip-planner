@@ -31,7 +31,10 @@
     <div class="title">Notes</div>
     <div class="trip-data">{{singleTrip.notes}}</div>
 
-    <div class="title">Ski Resort(s)</div>
+    <a href="/resort/trip/{{singleTrip._id}}" class="trip-data">
+        <div class="title">Ski Resort(s)
+        </div>
+    </a>
     {{#each resort}}
     <a href="/resort/{{_id}}">
         <div class="trip-data">{{name}}</div>
