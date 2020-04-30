@@ -5,7 +5,7 @@ const tripModel = require('../models/trip.js')
 const userRouter = express.Router()
 
 // GET ALL USERS
-userRouter.get('/', async (req, res) => {
+userRouter.get('/user', async (req, res) => {
     try {
         const allUsers = await userModel.getAllUsers()
         console.log('got all users successfully')
@@ -17,12 +17,12 @@ userRouter.get('/', async (req, res) => {
 })
 
 // CREATE NEW USER FORM
-userRouter.get('/new', (req, res) => {
+userRouter.get('/', (req, res) => {
     res.render('user/createUser')
 })
 
 // EDIT USER FORM
-userRouter.get('/:userId/edit', async (req, res) => {
+userRouter.get('/user/:userId/edit', async (req, res) => {
     try {
         const singleUser = await userModel.getOneUser(req.params.userId)
         res.render('user/editUser', { singleUser })
@@ -34,7 +34,7 @@ userRouter.get('/:userId/edit', async (req, res) => {
 
 
 // GET A SINGLE USER
-userRouter.get('/:userId', async (req, res) => {
+userRouter.get('/user/:userId', async (req, res) => {
     console.log('userRouter.GET one route')
     try {
         const singleUser = await userModel.getOneUser(req.params.userId)
@@ -48,10 +48,10 @@ userRouter.get('/:userId', async (req, res) => {
 })
 
 // CREATE A NEW USER
-userRouter.post('/', async (req, res) => {
+userRouter.post('/user', async (req, res) => {
     try {
-        await userModel.createUser(req.body)
-        res.redirect('/user')
+        const newUser = await userModel.createUser(req.body)
+        res.redirect(`/user/${newUser._id}`)
     } catch (err) {
         console.log(err)
         res.json(err)
@@ -59,7 +59,7 @@ userRouter.post('/', async (req, res) => {
 })
 
 // DELETE A USER
-userRouter.delete('/:userId', async (req, res) => {
+userRouter.delete('/user/:userId', async (req, res) => {
     try {
         await userModel.deleteUser(req.params.userId)
         res.redirect('/user')
@@ -70,7 +70,7 @@ userRouter.delete('/:userId', async (req, res) => {
 })
 
 // UPDATE A USER
-userRouter.put('/:userId', async (req, res) => {
+userRouter.put('/user/:userId', async (req, res) => {
     try {
         await userModel.updateUser(req.params.userId, req.body)
         res.redirect(`/user/${req.params.userId}`)

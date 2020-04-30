@@ -15,7 +15,7 @@ app.use(methodOverride('_method'))
 
 app.use(express.static(__dirname + "/public"))
 
-app.use('/user', userRouter)
+app.use('/', userRouter)
 app.use('/trip', tripRouter)
 app.use('/resort', resortRouter)
 

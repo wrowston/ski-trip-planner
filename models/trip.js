@@ -7,6 +7,7 @@ const tripSchema = new Schema({
     state: String,
     city: String,
     airport: String,
+    dates: String,
     daysSkiing: Number,
     passortRequired: Boolean,
     notes: String,
