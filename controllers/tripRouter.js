@@ -1,6 +1,7 @@
 const express = require('express')
 const tripModel = require('../models/trip.js')
 const userModel = require('../models/user.js')
+const resortModel = require('../models/resort.js')
 
 const tripRouter = express.Router()
 
@@ -50,8 +51,9 @@ tripRouter.get('/:id/edit', async (req, res) => {
 tripRouter.get('/:id', async (req, res) => {
     try {
         const singleTrip = await tripModel.getOneTrip(req.params.id)
+        const resort = await resortModel.getAllResortsByTripId(req.params.id)
         console.log('got a single trip successfully')
-        res.render('trip/singleTrip', { singleTrip })
+        res.render('trip/singleTrip', { singleTrip, resort })
     } catch (err) {
         console.log(err)
         res.json(err)
