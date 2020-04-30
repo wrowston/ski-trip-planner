@@ -51,4 +51,5 @@ module.exports = {
     createResort,
     deleteResort,
     updateResort,
+    getAllResortsByTripId
 }
