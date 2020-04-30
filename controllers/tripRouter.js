@@ -21,8 +21,9 @@ tripRouter.get('/', async (req, res) => {
 tripRouter.get('/user/:userId', async (req, res) => {
     try {
         const allTrips = await tripModel.getAllTripsByUserId(req.params.userId)
+        const user = await userModel.getOneUser(req.params.userId)
         console.log('got all trips successfully')
-        res.render('trip/allTrips', { allTrips })
+        res.render('trip/allTrips', { allTrips, user })
     } catch (err) {
         console.log(err)
         res.json(err)
