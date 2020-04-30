@@ -63,8 +63,8 @@ tripRouter.get('/:tripId', async (req, res) => {
 // CREATE A NEW TRIP
 tripRouter.post('/', async (req, res) => {
     try {
-        await tripModel.createTrip(req.body)
-        res.redirect('/trip')
+        const trip = await tripModel.createTrip(req.body)
+        res.redirect(`/user/${trip.userId}`)
     } catch (err) {
         console.log(err)
         res.json(err)
