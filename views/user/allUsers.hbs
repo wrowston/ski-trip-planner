@@ -9,12 +9,13 @@
 
 <div class="user-cards">
     {{#each allUsers}}
-    <div class="card" style="width: 18rem;">
+    <div class="card bg-light mb-3" style="width: 18rem;">
+        <div class="card-header">{{name}}</div>
         <div class="card-body">
-            <h4 class="card-title">{{name}}</h4>
+            {{!-- <h4 class="card-title">{{name}}</h4> --}}
             <p class="card-text">Experience: {{skillLevel}}</p>
             <p class="card-text">Activity: {{skiOrSnowboard}}</p>
-            <a href="/user/{{_id}}" class="card-link">Trips created by this user</a>
+            <a href="/user/{{_id}}" class="btn btn-outline-info">Trips created by this user</a>
         </div>
     </div>
     {{/each}}
