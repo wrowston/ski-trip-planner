@@ -67,3 +67,20 @@ a {
 .form-row {
     justify-content: center;
 }
+
+.user-jumbotron {
+    display: flex;
+    justify-content: center;
+}
+
+.jumbotron {
+    width: 50%;
+}
+
+/* .trip-link {
+    color: #17a2b8 ;
+} */
+/* 
+.add-trip-button {
+    border: solid #17a2b8 1px;
+} */

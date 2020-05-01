@@ -1,37 +1,36 @@
 <div class="header">Current User</div>
 
-<a href="/user/{{singleUser._id}}/edit">
-    <button>
-        Edit
-    </button>
-</a>
+<div class="user-jumbotron">
+    <div class="jumbotron">
+        <div class="card-body">
+            <h5 class="display-4">{{singleUser.name}}</h5>
+            <p class="lead">Bio lorem ipsum</p>
+            <p>Experience: {{singleUser.skillLevel}}</p>
+            <p>Activity: {{singleUser.skiOrSnowboard}}</p>
+        </div>
+        <div class="card-body">
+            <a href="/trip/user/{{singleUser._id}}" class="card-link">Trips created by
+                {{singleUser.name}}</a>
+        </div>
+        <ul class="list-group list-group-flush">
+            {{#each trip}}
+            <li class="list-group-item">
+                <a href="/trip/{{_id}}">
+                    <div class="user-data">{{name}}</div>
+                </a>
+            </li>
+            {{/each}}
+        </ul>
 
-<div class="user-item">
-    <div class="title">Name</div>
-    <div class="user-data">{{singleUser.name}}</div>
+        <a class="trip-link" href="/trip/newTrip/user/{{singleUser._id}}">
+            <button class="btn btn-info">Create a New Trip</button>
+        </a>
+        <a class="trip-link" href="/user/{{singleUser._id}}/edit">
+            <button class="btn btn-info">Edit</button>
+        </a>
 
-    <div class="title">Skill Level</div>
-    <div class="user-data">{{singleUser.skillLevel}}</div>
-
-    <div class="title">Sport</div>
-    <div class="user-data">{{singleUser.skiOrSnowboard}}</div>
-
-    <a href="/trip/user/{{singleUser._id}}" class="user-data">
-        <div class="title">Ski Trips</div>
-    </a>
-
-    {{#each trip}}
-    <a href="/trip/{{_id}}">
-        <div class="user-data">{{name}}</div>
-    </a>
-    {{/each}}
-
-    <a href="/trip/newTrip/user/{{singleUser._id}}">
-        <button>Create a New Trip</button>
-    </a>
-
+        <form action="/user/{{singleUser._id}}?_method=DELETE" method="POST">
+            <button class="btn btn-danger">Delete</button>
+        </form>
+    </div>
 </div>
-
-<form action="/user/{{singleUser._id}}?_method=DELETE" method="POST">
-    <button>Delete</button>
-</form>
