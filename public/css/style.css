@@ -64,3 +64,6 @@ a {
     margin: 10px;
 }
 
+.form-row {
+    justify-content: center;
+}

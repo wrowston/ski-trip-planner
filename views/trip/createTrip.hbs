@@ -1,110 +1,123 @@
 <div class="header">Create Trip</div>
 
-<form class="needs-validation" novalidate method="POST" action="/trip">
-    <div class="form-row">
-        <div class="col-md-3 mb-3">
-            <label for="validationCustom01">Trip Name</label>
-            <input type="text" class="form-control" id="validationCustom01" placeholder="Trip Name" name="name"
-                required>
-            <div class="valid-feedback">
-                Looks good!
-            </div>
-            <div class="invalid-feedback">
-                Please name your trip.
-            </div>
-        </div>
-        <div class="col-md-3 mb-3">
-            <label for="validationCustom02">Country</label>
-            <select class="form-control" id="validationCustom02" name="country" required>
-                <option value="Canada">Canada</option>
-                <option value="United States of America">United States of America</option>
-            </select>
-        </div>
-        <div class="col-md-3 mb-3">
-            <label for="validationCustomUsername">State</label>
-            <div class="input-group">
-                <input type="text" class="form-control" id="validationCustomUsername" name="state" required>
+<div class="create-trip-form">
+    <form class="needs-validation" novalidate method="POST" action="/trip">
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="validationCustom01">Trip Name</label>
+                <input type="text" class="form-control" id="validationCustom01" placeholder="Trip Name" name="name"
+                    required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
                 <div class="invalid-feedback">
-                    Please provide a valid State.
+                    Please name your trip.
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationCustom02">Country</label>
+                <select class="form-control" id="validationCustom02" name="country" required>
+                    <option value="Canada">Canada</option>
+                    <option value="United States of America">United States of America</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-3 mb-3">
+                <label for="validationCustom03">City</label>
+                <input type="text" class="form-control" id="validationCustom03" name="city" required>
+                <div class="invalid-feedback">
+                    Please provide a valid city.
+                </div>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="validationCustomUsername">State</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="validationCustomUsername" name="state" required>
+                    <div class="invalid-feedback">
+                        Please provide a valid State.
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 mb-3">
+                <label for="validationCustom03">Airpot</label>
+                <input type="text" class="form-control" id="validationCustom03" name="airport" required>
+                <div class="invalid-feedback">
+                    Please provide a valid airport.
                 </div>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
             </div>
         </div>
-        <div class="col-md-3 mb-3">
-            <label for="validationCustom03">City</label>
-            <input type="text" class="form-control" id="validationCustom03" name="city" required>
-            <div class="invalid-feedback">
-                Please provide a valid city.
+        <div class="form-row">
+            <div class="col-md-2 mb-3">
+                <label for="validationCustom03">Start Date</label>
+                <input type="date" class="form-control" id="validationCustom03" name="startDate" required>
+                <div class="invalid-feedback">
+                    Please select a start date.
+                </div>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
             </div>
-            <div class="valid-feedback">
-                Looks good!
+            <div class="col-md-2 mb-3">
+                <label for="validationCustom03">End Date</label>
+                <input type="date" class="form-control" id="validationCustom03" name="endDate" required>
+                <div class="invalid-feedback">
+                    Please select an end date.
+                </div>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="form-row">
-        <div class="col-md-2 mb-3">
-            <label for="validationCustom03">Airpot</label>
-            <input type="text" class="form-control" id="validationCustom03" name="airport" required>
-            <div class="invalid-feedback">
-                Please provide a valid airport.
+            <div class="col-md-2 mb-3">
+                <label for="validationCustom03">Days on the Slopes</label>
+                <input type="number" class="form-control" id="validationCustom03" name="daysSkiing" required>
+                <div class="invalid-feedback">
+                    Please provide how many days you are planning on skiing.
+                </div>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
             </div>
-            <div class="valid-feedback">
-                Looks good!
-            </div>
-        </div>
-        <div class="col-md-2 mb-3">
-            <label for="validationCustom03">Start Date</label>
-            <input type="date" class="form-control" id="validationCustom03" name="startDate" required>
-            <div class="invalid-feedback">
-                Please select a start date.
-            </div>
-            <div class="valid-feedback">
-                Looks good!
-            </div>
-        </div>
-        <div class="col-md-2 mb-3">
-            <label for="validationCustom03">End Date</label>
-            <input type="date" class="form-control" id="validationCustom03" name="endDate" required>
-            <div class="invalid-feedback">
-                Please select an end date.
-            </div>
-            <div class="valid-feedback">
-                Looks good!
-            </div>
-        </div>
-        <div class="col-md-2 mb-3">
-            <label for="validationCustom03">Days on the Slopes</label>
-            <input type="number" class="form-control" id="validationCustom03" name="daysSkiing" required>
-            <div class="invalid-feedback">
-                Please provide how many days you are planning on skiing.
-            </div>
-            <div class="valid-feedback">
-                Looks good!
+            <div class="col-md-2 mb-3">
+                <label for="validationCustom03">Passport Required?</label>
+                <select class="form-control" id="validationCustom02" name="passportRequired" required>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+                <div class="invalid-feedback">
+                    Please select an option.
+                </div>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
             </div>
         </div>
-        <div class="col-md-2 mb-3">
-            <label for="validationCustom03">Passport Required?</label>
-            <select class="form-control" id="validationCustom02" name="passportRequired" required>
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-            </select>
-            <div class="invalid-feedback">
-                Please select an option.
-            </div>
-            <div class="valid-feedback">
-                Looks good!
+        <div class="form-row">
+            <div class="col-md-8 mb-3">
+                <label for="exampleFormControlTextarea1">Notes</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="notes"></textarea>
             </div>
         </div>
-    </div>
 
-    </div>
 
-    <input type="hidden" value="{{singleUser._id}}" name="userId" />
+        <input type="hidden" value="{{singleUser._id}}" name="userId" />
 
-    <input type="submit" value="Create" class="btn btn-primary" />
-</form>
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <input type="submit" value="Create" class="btn btn-info btn-lg btn-block" />
+            </div>
+        </div>
+    </form>
+</div>
 
 <script>
     // Example starter JavaScript for disabling form submissions if there are invalid fields
