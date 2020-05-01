@@ -1,7 +1,7 @@
-<div class="header">All Users</div>
+<div class="header">People that have used Ski Trip Planner</div>
 <div class="text-center">
     <a href="/">
-        <button class="btn btn-primary">
+        <button class="btn btn-info">
             Create User
         </button>
     </a>
@@ -11,7 +11,7 @@
     {{#each allUsers}}
     <div class="card" style="width: 18rem;">
         <div class="card-body">
-            <h5 class="card-title">{{name}}</h5>
+            <h4 class="card-title">{{name}}</h4>
             <p class="card-text">Experience: {{skillLevel}}</p>
             <p class="card-text">Activity: {{skiOrSnowboard}}</p>
             <a href="/user/{{_id}}" class="card-link">Trips created by this user</a>
