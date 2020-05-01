@@ -11,8 +11,6 @@ a {
     text-decoration: none;
 }
 
-
-
 .welcome {
     text-align: center;
     font-size: 45px;
@@ -24,7 +22,7 @@ a {
 
 .description{
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 300;
     letter-spacing: 0.5px;
     padding: 0 20px 20px 20px;
@@ -53,7 +51,7 @@ a {
     align-items: center;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
-    margin: 20px;
+    margin: 20px 200px 20px 200px;
     padding: 20px;
 }
 
