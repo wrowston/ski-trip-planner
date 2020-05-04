@@ -1,47 +1,50 @@
 <div class="header">Current Resort</div>
 
-<a href="/resort/{{singleResort._id}}/edit">
-    <button>
-        Edit
-    </button>
-</a>
+<div class="user-jumbotron">
+    <div class="jumbotron">
+        <div class="card-body">
+            <h5 class="display-4">{{singleResort.name}}</h5>
 
-<div class="resort-item">
-    <div class="title">Name</div>
-    <div class="resort-data">{{singleResort.name}}</div>
+            <p class="lead">Notes lorem ipsum {{singleResort.notes}}</p>
 
-    <div class="title">Average Annual Snowfall (in.)</div>
-    <div class="resort-data">{{singleResort.averageAnnualSnowfall}}</div>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <div class="user-data">Average Annual Snowfall (in.): {{singleResort.averageAnnualSnowfall}}</div>
+            </li>
+            <li class="list-group-item">
+                <div class="user-data">YTD Snowfall (in.): {{singleResort.yearToDateSnowfall}}</div>
+            </li>
+            <li class="list-group-item">
+                <div class="user-data">Current Base (in.): {{singleResort.currentBase}}</div>
+            </li>
+            <li class="list-group-item">
+                <div class="user-data">Vertical Feet (ft.): {{singleResort.verticalFeet}}</div>
+            </li>
+            <li class="list-group-item">
+                <div class="user-data">Number of Trails: {{singleResort.amountOfTrails}}</div>
+            </li>
+            <li class="list-group-item">
+                <div class="user-data">Number of Lifts: {{singleResort.amountofLifts}}</div>
+            </li>
+            <li class="list-group-item">
+                <div class="user-data">Is this resort on the Ikon Pass? {{singleResort.onIkonPass}}</div>
+            </li>
+            <li class="list-group-item">
+                <div class="user-data">Is this resort on the Epic Pass? {{singleResort.onEpicPass}}</div>
+            </li>
 
-    <div class="title">YTD Snowfall (in.)</div>
-    <div class="resort-data">{{singleResort.yearToDateSnowfall}}</div>
+        </ul>
 
-    <div class="title">Current Base (in.)</div>
-    <div class="resort-data">{{singleResort.currentBase}}</div>
+        <div class="trip-link">
+            <a href="/resort/{{singleResort._id}}/edit">
+                <button class="btn btn-info">Edit</button>
+            </a>
+        </div>
 
-    <div class="title">Vertical Feet (ft.)</div>
-    <div class="resort-data">{{singleResort.verticalFeet}}</div>
 
-    <div class="title">Number of Trails</div>
-    <div class="resort-data">{{singleResort.amountOfTrails}}</div>
-
-    <div class="title">Number of Lifts</div>
-    <div class="resort-data">{{singleResort.amountofLifts}}</div>
-
-    <div class="title">On Mountain Lodging?</div>
-    <div class="resort-data">{{singleResort.hasOnMountainLodging}}</div>
-
-    <div class="title">Is this resort on the Ikon Pass?</div>
-    <div class="resort-data">{{singleResort.onIkonPass}}</div>
-
-    <div class="title">Is this resort on the Epic Pass?</div>
-    <div class="resort-data">{{singleResort.onEpicPass}}</div>
-
-    <div class="title">Notes</div>
-    <div class="resort-data">{{singleResort.notes}}</div>
-
+        <form action="/resort/{{singleResort._id}}?_method=DELETE" method="POST">
+            <button class="btn btn-danger">Delete</button>
+        </form>
+    </div>
 </div>
-
-<form action="/resort/{{singleResort._id}}?_method=DELETE" method="POST">
-    <button>Delete</button>
-</form>
