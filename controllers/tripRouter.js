@@ -75,8 +75,8 @@ tripRouter.post('/', async (req, res) => {
 // DELETE A TRIP
 tripRouter.delete('/:tripId', async (req, res) => {
     try {
-        await tripModel.deleteTrip(req.params.tripId)
-        res.redirect('/trip')
+        const trip = await tripModel.deleteTrip(req.params.tripId)
+        res.redirect(`/user/${trip.userId}`)
     } catch (err) {
         console.log(err)
         res.json(err)

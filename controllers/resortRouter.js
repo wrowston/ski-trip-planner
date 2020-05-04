@@ -73,8 +73,8 @@ resortRouter.post('/', async (req, res) => {
 // DELETE A RESORT
 resortRouter.delete('/:resortId', async (req, res) => {
     try {
-        await resortModel.deleteResort(req.params.resortId)
-        res.redirect('/resort')
+        const resort = await resortModel.deleteResort(req.params.resortId)
+        res.redirect(`/trip/${resort.tripId}`)
     } catch (err) {
         console.log(err)
         res.json(err)
