@@ -1,6 +1,6 @@
 <div class="header">Current Trip</div>
 
-<a href="/trip/{{singleTrip._id}}/edit">
+{{!-- <a href="/trip/{{singleTrip._id}}/edit">
     <button>
         Edit
     </button>
@@ -53,4 +53,43 @@
 
 <form action="/trip/{{singleTrip._id}}?_method=DELETE" method="POST">
     <button>Delete</button>
-</form>
+</form> --}}
+
+<div class="user-jumbotron">
+    <div class="jumbotron">
+        <div class="card-body">
+            <h5 class="display-4">{{singleTrip.name}}</h5>
+            <p class="lead">Notes lorem ipsum {{singleTrip.notes}}</p>
+            <p>{{singleTrip.city}}, {{singleTrip.state}}, {{singleTrip.country}}</p>
+            <p>Airport: {{singleTrip.airport}}</p>
+            <p>Dates: {{singleTrip.startDate}} - {{singleTrip.endDate}}</p>
+            <p>Days Skiing: {{singleTrip.daysSkiing}}</p>
+        </div>
+        <div class="card-body">
+            <a href="/resort/trip/{{singleTrip._id}}" class="card-link">Ski Resort(s)</a>
+        </div>
+        <ul class="list-group list-group-flush">
+            {{#each resort}}
+            <li class="list-group-item">
+                <a href="/resort/{{_id}}">
+                    <div class="user-data">{{name}}</div>
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+
+        <div class="trip-link">
+            <a href="/resort/newResort/trip/{{singleTrip._id}}">
+                <button class="btn btn-info">Add a Ski Resort</button>
+            </a>
+            <a href="/trip/{{singleTrip._id}}/edit">
+                <button class="btn btn-info">Edit</button>
+            </a>
+        </div>
+
+
+        <form action="/trip/{{singleTrip._id}}?_method=DELETE" method="POST">
+            <button class="btn btn-danger">Delete</button>
+        </form>
+    </div>
+</div>
