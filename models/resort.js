@@ -2,7 +2,10 @@ const mongoose = require('../db/connection.js')
 const Schema = mongoose.Schema
 
 const resortSchema = new Schema({
-    name: String,
+    name: {
+        type: String,
+        required: true
+    },
     averageAnnualSnowfall: Number,
     yearToDateSnowfall: Number,
     currentBase: Number,

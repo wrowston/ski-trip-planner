@@ -1,13 +1,12 @@
 <div class="header">Create Resort</div>
 
 <div class="create-resort-wrapper">
-    <form method="POST" action="/resort" class="needs-validation" novalidate>
+    <form class="needs-validation" novalidate method="POST" action="/resort">
 
         <div class="form-group row">
             <label>Name</label>
             <div class="col-sm-5">
-                <input type="text" class="form-control" name="name" placeholder="Resort Name" id="validationCustom01"
-                    required>
+                <input type="text" class="form-control" name="name" placeholder="Resort Name" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
@@ -20,7 +19,7 @@
         <div class="form-group row">
             <label>Average Annual Snowfall (in.)</label>
             <div class="col-sm-5">
-                <input type="number" class="form-control" name="averageAnnualSnowfall" id="validationCustom02" required>
+                <input type="number" class="form-control" name="averageAnnualSnowfall" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
@@ -33,7 +32,7 @@
         <div class="form-group row">
             <label>YTD Snowfall (in.)</label>
             <div class="col-sm-5">
-                <input type="number" class="form-control" name="yearToDateSnowfall" id="validationCustom03" required>
+                <input type="number" class="form-control" name="yearToDateSnowfall" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
@@ -46,7 +45,7 @@
         <div class="form-group row">
             <label>Current Base (in.)</label>
             <div class="col-sm-5">
-                <input type="number" class="form-control" name="currentBase" id="validationCustom04" required>
+                <input type="number" class="form-control" name="currentBase" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
@@ -59,7 +58,7 @@
         <div class="form-group row">
             <label>Vertical Feet (ft.)</label>
             <div class="col-sm-5">
-                <input type="number" class="form-control" name="verticalFeet" id="validationCustom05" required>
+                <input type="number" class="form-control" name="verticalFeet" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
@@ -72,7 +71,7 @@
         <div class="form-group row">
             <label>Number of Trails</label>
             <div class="col-sm-5">
-                <input type="number" class="form-control" name="amountOfTrails" id="validationCustom06" required>
+                <input type="number" class="form-control" name="amountOfTrails" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
@@ -85,7 +84,7 @@
         <div class="form-group row">
             <label>Number of Lifts</label>
             <div class="col-sm-5">
-                <input type="number" class="form-control" name="amountofLifts" id="validationCustom07" required>
+                <input type="number" class="form-control" name="amountofLifts" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
@@ -97,7 +96,7 @@
         <div class="form-group row">
             <label>Is this resort on the Ikon Pass?</label>
             <div class="col-sm-5">
-                <select class="form-control" name="onIkonPass" id="validationCustom08" required>
+                <select class="form-control" name="onIkonPass" required>
                     <option value="" disabled selected hidden>Select an option</option>
                     <option value="true">Yes</option>
                     <option value="false">No</option>
@@ -113,7 +112,7 @@
         <div class="form-group row">
             <label>Is this resort on the Epic Pass?</label>
             <div class="col-sm-5">
-                <select class="form-control" name="onEpicPass" id="validationCustom09" required>
+                <select class="form-control" name="onEpicPass" required>
                     <option value="" disabled selected hidden>Select an option</option>
                     <option value="true">Yes</option>
                     <option value="false">No</option>
@@ -129,18 +128,18 @@
         <div class="form-group row">
             <label>Notes</label>
             <div class="col-md-8 mb-3">
-                <textarea type="textarea" class="form-control" name="name"
+                <textarea type="textarea" class="form-control" name="notes"
                     placeholder="Write a short description about the reosrt..."></textarea>
             </div>
         </div>
-
-        <input type="hidden" value="{{singleTrip._id}}" name="tripId" />
 
         <div class="form-row">
             <div class="col-md-4 mb-3">
                 <input type="submit" value="Create" class="btn btn-info btn-lg btn-block" />
             </div>
         </div>
+
+        <input type="hidden" value="{{singleTrip._id}}" name="tripId" />
     </form>
 </div>
 
