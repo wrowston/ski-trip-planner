@@ -81,3 +81,13 @@ a {
     margin: 20px 20px 5px 0;
 }
 
+.create-resort-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px 20px 20px;
+}
+
+.create-resort-wrapper .row {
+    display: flex;
+    justify-content: space-between;
+}

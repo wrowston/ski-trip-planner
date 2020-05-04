@@ -1,51 +1,166 @@
 <div class="header">Create Resort</div>
 
+<div class="create-resort-wrapper">
+    <form method="POST" action="/resort" class="needs-validation" novalidate>
 
-<form method="POST" action="/resort">
+        <div class="form-group row">
+            <label>Name</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" name="name" placeholder="Resort Name" id="validationCustom01"
+                    required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please enter the resort's name.
+                </div>
+            </div>
+        </div>
 
-    <label>Name</label>
-    <input type="text" placeholder="Resort Name" name="name" />
+        <div class="form-group row">
+            <label>Average Annual Snowfall (in.)</label>
+            <div class="col-sm-5">
+                <input type="number" class="form-control" name="averageAnnualSnowfall" id="validationCustom02" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please enter the average annual snowfall.
+                </div>
+            </div>
+        </div>
 
-    <label>Average Annual Snowfall (in.)</label>
-    <input type="number" name="averageAnnualSnowfall" />
+        <div class="form-group row">
+            <label>YTD Snowfall (in.)</label>
+            <div class="col-sm-5">
+                <input type="number" class="form-control" name="yearToDateSnowfall" id="validationCustom03" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please enter the year to date (YTD) snowfall.
+                </div>
+            </div>
+        </div>
 
-    <label>YTD Snowfall (in.)</label>
-    <input type="number" name="yearToDateSnowfall" />
+        <div class="form-group row">
+            <label>Current Base (in.)</label>
+            <div class="col-sm-5">
+                <input type="number" class="form-control" name="currentBase" id="validationCustom04" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please enter the current base.
+                </div>
+            </div>
+        </div>
 
-    <label>Current Base (in.)</label>
-    <input type="number" name="currentBase" />
+        <div class="form-group row">
+            <label>Vertical Feet (ft.)</label>
+            <div class="col-sm-5">
+                <input type="number" class="form-control" name="verticalFeet" id="validationCustom05" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please enter the vertical feet.
+                </div>
+            </div>
+        </div>
 
-    <label>Vertical Feet (ft.)</label>
-    <input type="number" name="verticalFeet" />
+        <div class="form-group row">
+            <label>Number of Trails</label>
+            <div class="col-sm-5">
+                <input type="number" class="form-control" name="amountOfTrails" id="validationCustom06" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please enter the number of trails on the mountain.
+                </div>
+            </div>
+        </div>
 
-    <label>Number of Trails</label>
-    <input type="number" name="amountOfTrails" />
+        <div class="form-group row">
+            <label>Number of Lifts</label>
+            <div class="col-sm-5">
+                <input type="number" class="form-control" name="amountofLifts" id="validationCustom07" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please enter the number of lifts on the mountain.
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label>Is this resort on the Ikon Pass?</label>
+            <div class="col-sm-5">
+                <select class="form-control" name="onIkonPass" id="validationCustom08" required>
+                    <option value="" disabled selected hidden>Select an option</option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please select an option.
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label>Is this resort on the Epic Pass?</label>
+            <div class="col-sm-5">
+                <select class="form-control" name="onEpicPass" id="validationCustom09" required>
+                    <option value="" disabled selected hidden>Select an option</option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please select an option.
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label>Notes</label>
+            <div class="col-md-8 mb-3">
+                <textarea type="textarea" class="form-control" name="name"
+                    placeholder="Write a short description about the reosrt..."></textarea>
+            </div>
+        </div>
 
-    <label>Number of Lifts</label>
-    <input type="number" name="amountofLifts" />
+        <input type="hidden" value="{{singleTrip._id}}" name="tripId" />
 
-    <label>Does this resort on mountain lodging?</label>
-    <select name="hasOnMountainLodging">
-        <option value="true">Yes</option>
-        <option value="false">No</option>
-    </select>
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <input type="submit" value="Create" class="btn btn-info btn-lg btn-block" />
+            </div>
+        </div>
+    </form>
+</div>
 
-    <label>Is this resort on the Ikon Pass?</label>
-    <select name="onIkonPass">
-        <option value="true">Yes</option>
-        <option value="false">No</option>
-    </select>
-
-    <label>Is this resort on the Epic Pass?</label>
-    <select name="onEpicPass">
-        <option value="true">Yes</option>
-        <option value="false">No</option>
-    </select>
-
-    <label>Notes</label>
-    <input type="text" name="notes" value="{{notes}}">
-
-    <input type="textarea" value="{{singleTrip._id}}" name="tripId" />
-
-    <input type="submit" value="Create" />
-</form>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>

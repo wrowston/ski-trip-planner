@@ -9,7 +9,6 @@ const resortSchema = new Schema({
     verticalFeet: Number,
     amountOfTrails: Number,
     amountofLifts: Number,
-    hasOnMountainLodging: Boolean,
     onIkonPass: Boolean,
     onEpicPass: Boolean,
     notes: String,
