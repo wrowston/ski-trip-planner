@@ -22,12 +22,14 @@
             {{/each}}
         </ul>
 
-        <a class="trip-link" href="/trip/newTrip/user/{{singleUser._id}}">
-            <button class="btn btn-info">Create a New Trip</button>
-        </a>
-        <a class="trip-link" href="/user/{{singleUser._id}}/edit">
-            <button class="btn btn-info">Edit</button>
-        </a>
+        <div class="trip-link">
+            <a href="/trip/newTrip/user/{{singleUser._id}}">
+                <button class="btn btn-info">Create a New Trip</button>
+            </a>
+            <a href="/user/{{singleUser._id}}/edit">
+                <button class="btn btn-info">Edit</button>
+            </a>
+        </div>
 
         <form action="/user/{{singleUser._id}}?_method=DELETE" method="POST">
             <button class="btn btn-danger">Delete</button>
