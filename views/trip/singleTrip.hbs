@@ -5,12 +5,12 @@
     <div class="jumbotron">
         <div class="card-body">
             <h5 class="display-4">{{singleTrip.name}}</h5>
-            <p class="lead">Notes lorem ipsum {{singleTrip.notes}}</p>
-            <p>{{singleTrip.city}}, {{singleTrip.state}}, {{singleTrip.country}}</p>
+            <p><span class="created-by">Created by <a href="/user/{{user._id}}">{{user.name}}</a></span> </p>
+            <p class="lead">{{singleTrip.city}}, {{singleTrip.state}}, {{singleTrip.country}}</p>
             <p>Airport: {{singleTrip.airport}}</p>
             <p>Dates: {{singleTrip.startDate}} - {{singleTrip.endDate}}</p>
             <p>Days Skiing: {{singleTrip.daysSkiing}}</p>
-            <p>Created by <a href="/user/{{user._id}}">{{user.name}}</a> </p>
+            <p>{{singleTrip.notes}}</p>
         </div>
         <div class="card-body">
             <a href="/resort/trip/{{singleTrip._id}}" class="card-link">Ski Resort(s)</a>

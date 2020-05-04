@@ -91,3 +91,12 @@ a {
     display: flex;
     justify-content: space-between;
 }
+.created-by {
+    font-size: 16px;
+    font-weight: 200;
+}
+
+.card-body p {
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
