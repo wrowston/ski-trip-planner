@@ -13,7 +13,8 @@ const userSchema = new Schema({
     skiOrSnowboard: {
         type: String,
         required: true
-    }
+    },
+    bio: String
 })
 
 const userCollection = mongoose.model('user', userSchema)
