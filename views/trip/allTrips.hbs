@@ -1,7 +1,7 @@
 <div class="header">All Trips by {{user.name}}</div>
 
 <div class="text-center">
-    <a href="/trip/new">
+    <a href="/trip/newTrip/user/{{user._id}}">
         <button class="btn btn-info">
             Create a New Trip
         </button>
@@ -22,8 +22,6 @@
             <p class="card-text">Dates: {{startDate}} - {{endDate}}</p>
 
             <p class="card-text">Days Skiing: {{daysSkiing}}</p>
-
-            <p class="card-text">Passport Required: {{passportRequired}}</p>
 
             <p class="card-text">Notes: {{notes}}</p>
             <a class="btn btn-outline-info" href="/trip/{{_id}}">View this Trip</a>

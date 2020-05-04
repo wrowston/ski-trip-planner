@@ -10,7 +10,6 @@ const tripSchema = new Schema({
     startDate: String,
     endDate: String,
     daysSkiing: Number,
-    passortRequired: Boolean,
     notes: String,
     userId: {
         type: String,
