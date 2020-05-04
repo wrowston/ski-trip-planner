@@ -1,40 +1,34 @@
 <div class="header">All Trips by {{user.name}}</div>
 
-<a href="/trip/new">
-    <button>
-        Create Trip
-    </button>
-</a>
+<div class="text-center">
+    <a href="/trip/new">
+        <button class="btn btn-info">
+            Create a New Trip
+        </button>
+    </a>
+</div>
 
+<div class="user-cards">
+    {{#each allTrips}}
+    <div class="card bg-light mb-3" style="width: 18rem;">
 
-{{#each allTrips}}
-<a class="trip-item" href="/trip/{{_id}}">
-    <div class="title">Name</div>
-    <div class="trip-data">{{name}}</div>
+        <p class="card-header">{{name}}</p>
 
-    <div class="title">Country</div>
-    <div class="trip-data">{{country}}</div>
+        <div class="card-body">
+            <p class="card-text">{{city}}, {{state}}, {{country}}</p>
 
-    <div class="title">State</div>
-    <div class="trip-data">{{state}}</div>
+            <p class="card-text">Airport: {{airport}}</p>
 
-    <div class="title">City</div>
-    <div class="trip-data">{{city}}</div>
+            <p class="card-text">Dates: {{startDate}} - {{endDate}}</p>
 
-    <div class="title">Airport</div>
-    <div class="trip-data">{{airport}}</div>
+            <p class="card-text">Days Skiing: {{daysSkiing}}</p>
 
-    <div class="title">Dates</div>
-    <div class="trip-data">{{startDate}} - {{endDate}}</div>
+            <p class="card-text">Passport Required: {{passportRequired}}</p>
 
-    <div class="title">Days Skiing</div>
-    <div class="trip-data">{{daysSkiing}}</div>
+            <p class="card-text">Notes: {{notes}}</p>
+            <a class="btn btn-outline-info" href="/trip/{{_id}}">View this Trip</a>
+        </div>
 
-    <div class="title">Passport Required</div>
-    <div class="trip-data">{{passportRequired}}</div>
-
-    <div class="title">Notes</div>
-    <div class="trip-data">{{notes}}</div>
-</a>
-<hr>
-{{/each}}
+    </div>
+    {{/each}}
+</div>
