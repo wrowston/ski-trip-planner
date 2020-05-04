@@ -1,46 +1,42 @@
 <div class="header">All Resorts from {{trip.name}}</div>
 
-<a href="/resort/new">
-    <button>
-        Create Resort
-    </button>
-</a>
+
+<div class="text-center">
+    <a href="/resort/newResort/trip/{{trip._id}}">
+        <button class="btn btn-info">
+            Add a New Resort
+        </button>
+    </a>
+</div>
 
 
-{{#each allResorts}}
-<a class="resort-item" href="/resort/{{_id}}">
-    <div class="title">Name</div>
-    <div class="resort-data">{{name}}</div>
+<div class="user-cards">
+    {{#each allResorts}}
+    <div class="card bg-light mb-3" style="width: 18rem;">
 
-    <div class="title">Average Annual Snowfall (in.)</div>
-    <div class="resort-data">{{averageAnnualSnowfall}}</div>
+        <p class="card-header">{{name}}</p>
 
-    <div class="title">YTD Snowfall (in.)</div>
-    <div class="resort-data">{{yearToDateSnowfall}}</div>
+        <div class="card-body">
+            <p class="card-text">Average Annual Snowfall (in.): {{averageAnnualSnowfall}}</p>
 
-    <div class="title">Current Base (in.)</div>
-    <div class="resort-data">{{currentBase}}</div>
+            <p class="card-text">YTD Snowfall (in.): {{yearToDateSnowfall}}</p>
 
-    <div class="title">Vertical Feet (ft.)</div>
-    <div class="resort-data">{{verticalFeet}}</div>
+            <p class="card-text">Current Base (in.): {{currentBase}}</p>
 
-    <div class="title">Number of Trails</div>
-    <div class="resort-data">{{amountOfTrails}}</div>
+            <p class="card-text">Vertical Feet (ft.): {{verticalFeet}}</p>
 
-    <div class="title">Number of Lifts</div>
-    <div class="resort-data">{{amountofLifts}}</div>
+            <p class="card-text">Number of Trails: {{amountOfTrails}}</p>
 
-    <div class="title">On Mountain Lodging?</div>
-    <div class="resort-data">{{hasOnMountainLodging}}</div>
+            <p class="card-text">Number of Lifts: {{amountofLifts}}</p>
 
-    <div class="title">Is this resort on the Ikon Pass?</div>
-    <div class="resort-data">{{onIkonPass}}</div>
+            <p class="card-text">Is this resort on the Ikon Pass? {{onIkonPass}}</p>
 
-    <div class="title">Is this resort on the Epic Pass?</div>
-    <div class="resort-data">{{onEpicPass}}</div>
+            <p class="card-text">Is this resort on the Epic Pass? {{onEpicPass}}</p>
 
-    <div class="title">Notes</div>
-    <div class="resort-data">{{notes}}</div>
-</a>
-<hr>
-{{/each}}
+            <p class="card-text">Notes: {{notes}}</p>
+            <a class="btn btn-outline-info" href="/resort/{{_id}}">View this Resort</a>
+        </div>
+
+    </div>
+    {{/each}}
+</div>
