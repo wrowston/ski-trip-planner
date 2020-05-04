@@ -135,7 +135,7 @@
         <div class="form-group row">
             <label>Notes</label>
             <div class="col-md-8 mb-3">
-                <textarea type="textarea" class="form-control" name="notes" value="{{singleResort.notes}}"></textarea>
+                <textarea type="textarea" class="form-control" name="notes">{{singleResort.notes}}</textarea>
             </div>
         </div>
 
@@ -145,6 +145,6 @@
             </div>
         </div>
 
-        <input type="hidden" value="{{singleTrip._id}}" name="tripId" />
+        <input type="hidden" value="{{singleResort.tripId}}" name="tripId" />
     </form>
 </div>

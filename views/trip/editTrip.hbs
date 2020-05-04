@@ -97,13 +97,13 @@
         <div class="form-row">
             <div class="col-md-8 mb-3">
                 <label for="exampleFormControlTextarea1">Notes</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" value="{{singleTrip.notes}}"
-                    name="notes"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                    name="notes">{{singleTrip.notes}}</textarea>
             </div>
         </div>
 
 
-        <input type="hidden" value="{{singleUser._id}}" name="userId" />
+        <input type="hidden" value="{{singleTrip.userId}}" name="userId" />
 
         <div class="form-row">
             <div class="col-md-4 mb-3">
