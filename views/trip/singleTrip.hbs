@@ -10,6 +10,7 @@
             <p>Airport: {{singleTrip.airport}}</p>
             <p>Dates: {{singleTrip.startDate}} - {{singleTrip.endDate}}</p>
             <p>Days Skiing: {{singleTrip.daysSkiing}}</p>
+            <p>Created by <a href="/user/{{user._id}}">{{user.name}}</a> </p>
         </div>
         <div class="card-body">
             <a href="/resort/trip/{{singleTrip._id}}" class="card-link">Ski Resort(s)</a>

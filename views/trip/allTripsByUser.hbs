@@ -1,4 +1,12 @@
-<div class="header">Trips Created by Our Users</div>
+<div class="header">All Trips by {{user.name}}</div>
+
+<div class="text-center">
+    <a href="/trip/newTrip/user/{{user._id}}">
+        <button class="btn btn-info">
+            Create a New Trip
+        </button>
+    </a>
+</div>
 
 <div class="user-cards">
     {{#each allTrips}}
@@ -7,7 +15,6 @@
         <p class="card-header">{{name}}</p>
 
         <div class="card-body">
-
             <p class="card-text">{{city}}, {{state}}, {{country}}</p>
 
             <p class="card-text">Airport: {{airport}}</p>

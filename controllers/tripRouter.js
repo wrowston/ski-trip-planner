@@ -23,7 +23,7 @@ tripRouter.get('/user/:userId', async (req, res) => {
         const allTrips = await tripModel.getAllTripsByUserId(req.params.userId)
         const user = await userModel.getOneUser(req.params.userId)
         console.log('got all trips successfully')
-        res.render('trip/allTrips', { allTrips, user })
+        res.render('trip/allTripsByUser', { allTrips, user })
     } catch (err) {
         console.log(err)
         res.json(err)
@@ -53,8 +53,9 @@ tripRouter.get('/:tripId', async (req, res) => {
     try {
         const singleTrip = await tripModel.getOneTrip(req.params.tripId)
         const resort = await resortModel.getAllResortsByTripId(req.params.tripId)
+        const user = await userModel.getOneUser(singleTrip.userId)
         console.log('got a single trip successfully')
-        res.render('trip/singleTrip', { singleTrip, resort })
+        res.render('trip/singleTrip', { singleTrip, resort, user })
     } catch (err) {
         console.log(err)
         res.json(err)
