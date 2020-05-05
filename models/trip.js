@@ -7,8 +7,8 @@ const tripSchema = new Schema({
     state: String,
     city: String,
     airport: String,
-    startDate: String,
-    endDate: String,
+    startDate: Date,
+    endDate: Date,
     daysSkiing: Number,
     notes: String,
     userId: {
