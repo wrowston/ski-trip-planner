@@ -6,7 +6,7 @@ The goal of this project was to build a full-stack server application. Outside o
 
 ### Important Links
 
-<!-- * [Deployed App]  -->
+* [Deployed App](https://ski-trip-planner.herokuapp.com/)
 * [Trello Board](https://trello.com/b/rtjGTjZA/ski-trip-planner)
 
 ### Technnical Details
