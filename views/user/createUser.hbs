@@ -6,23 +6,35 @@
     </div>
 
     <div class="create-user-form">
-        <form method="POST" action="/user">
-            <input class="form-control" type="text" placeholder="Enter Your Name" name="name" />
-            <select class="form-control" name="skillLevel">
-                <option value="" disabled selected hidden>Select an option</option>
-                <option value="Beginner">Beginner</option>
-                <option value="Intermediate">Intermediate</option>
-                <option value="Advanced">Advanced</option>
-                <option value="Expert">Expert</option>
-            </select>
-            <select class="form-control" name="skiOrSnowboard">
-                <option value="" disabled selected hidden>Select an option</option>
-                <option value="Ski">Ski</option>
-                <option value="Snowboard">Snowboard</option>
-            </select>
-            <textarea class="form-control" rows="3" name="bio"
-                placeholder="Write a short bio about yourself..."></textarea>
-            <input type="submit" value="Start Planning" class="btn btn-info form-control" />
+        <form class="needs-validation" novalidate method="POST" action="/user">
+            <div class="form-row">
+                <input class="form-control" type="text" placeholder="Enter Your Name" name="name" required />
+            </div>
+
+            <div class="form-row">
+                <select class="form-control" name="skillLevel" required>
+                    <option value="" disabled selected hidden>Select an option</option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
+                    <option value="Expert">Expert</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <select class="form-control" name="skiOrSnowboard" required>
+                    <option value="" disabled selected hidden>Select an option</option>
+                    <option value="Ski">Ski</option>
+                    <option value="Snowboard">Snowboard</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <textarea class="form-control" rows="3" name="bio"
+                    placeholder="Write a short bio about yourself..."></textarea>
+            </div>
+            <div class="form-row">
+                <input type="submit" value="Start Planning" class="btn btn-info form-control" />
+            </div>
         </form>
     </div>
 </div>
