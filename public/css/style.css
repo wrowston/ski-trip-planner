@@ -100,3 +100,8 @@ a {
     font-weight: 300;
     letter-spacing: 0.5px;
 }
+
+.about-wrapper {
+    width: 70%;
+    margin: auto;
+}

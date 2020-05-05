@@ -19,6 +19,10 @@ app.use('/', userRouter)
 app.use('/trip', tripRouter)
 app.use('/resort', resortRouter)
 
+app.get('/about', (req, res) => {
+    res.render('about/about')
+})
+
 const PORT = process.env.PORT || 3000
 
 app.listen(PORT, () => {
