@@ -9,8 +9,8 @@
 # Technologies Used
 
 # ERD
-![Image description](/public/images/ski-trip-planner.jpeg)
+![ERD](/public/images/ski-trip-planner.jpeg)
 
 # Wireframe
-![Image description](/public/images/ski-trip-planner-wireframe1.pdf)
-![Image description](/public/images/ski-trip-planner-wireframe2.pdf)
+![Wireframe 1](/public/images/ski-trip-planner-wireframe1.jpeg)
+![Wireframe 2](/public/images/ski-trip-planner-wireframe2.jpeg)
