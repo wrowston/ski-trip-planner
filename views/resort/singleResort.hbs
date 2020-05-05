@@ -27,12 +27,25 @@
             <li class="list-group-item">
                 <div class="user-data">Number of Lifts: {{singleResort.amountofLifts}}</div>
             </li>
+            {{#if singleResort.onIkonPass}}
             <li class="list-group-item">
-                <div class="user-data">Is this resort on the Ikon Pass? {{singleResort.onIkonPass}}</div>
+                <div class="user-data">Is this resort on the Ikon Pass? Yes</div>
             </li>
+            {{else}}
             <li class="list-group-item">
-                <div class="user-data">Is this resort on the Epic Pass? {{singleResort.onEpicPass}}</div>
+                <div class="user-data">Is this resort on the Ikon Pass? No</div>
             </li>
+            {{/if}}
+
+            {{#if singleResort.onEpicPass}}
+            <li class="list-group-item">
+                <div class="user-data">Is this resort on the Epic Pass? Yes</div>
+            </li>
+            {{else}}
+            <li class="list-group-item">
+                <div class="user-data">Is this resort on the Epic Pass? No</div>
+            </li>
+            {{/if}}
 
         </ul>
 

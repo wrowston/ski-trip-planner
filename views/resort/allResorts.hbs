@@ -29,9 +29,17 @@
 
             <p class="card-text">Number of Lifts: {{amountofLifts}}</p>
 
-            <p class="card-text">Is this resort on the Ikon Pass? {{onIkonPass}}</p>
+            {{#if onIkonPass}}
+            <p class="card-text">Is this resort on the Ikon Pass? Yes</p>
+            {{else}}
+            <p class="card-text">Is this resort on the Ikon Pass? No</p>
+            {{/if}}
 
-            <p class="card-text">Is this resort on the Epic Pass? {{onEpicPass}}</p>
+            {{#if onEpicPass}}
+            <p class="card-text">Is this resort on the Epic Pass? Yes</p>
+            {{else}}
+            <p class="card-text">Is this resort on the Epic Pass? No</p>
+            {{/if}}
 
             <p class="card-text">Notes: {{notes}}</p>
             <a class="btn btn-outline-info" href="/resort/{{_id}}">View this Resort</a>
