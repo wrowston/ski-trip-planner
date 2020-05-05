@@ -19,8 +19,7 @@ The goal of this project was to build a full-stack server application. Outside o
 * __Used handlebars__ to create HTML templates
 * Styled with __CSS and Bootstrap__
 
-#### Technologies Used
-
+Technologies Used:
 JavaScript, Node.js, Express.js, MongoDB, Mongoose, HTML5, Handlebars, CSS, Bootstrap
 
 ### ERD
