@@ -12,4 +12,5 @@
 ![Image description](/public/images/ski-trip-planner.jpeg)
 
 # Wireframe
-![Image description](/public/images/ski-trip-planner-wireframe1.HEIC)
+![Image description](/public/images/ski-trip-planner-wireframe1.PDF)
+![Image description](/public/images/ski-trip-planner-wireframe2.PDF)
